@@ -1,7 +1,7 @@
 {
-  "name": "westeroscraftlauncher",
-  "version": "1.4.2",
-  "productName": "WesterosCraft Launcher",
+  "name": "akandirrempirelauncher",
+  "version": "0.0.1-alpha.1",
+  "productName": "AkandirrEmpire Lancher",
   "description": "Modded Minecraft Launcher",
   "author": "Daniel Scalzi (https://github.com/dscalzi/)",
   "license": "UNLICENSED",
@@ -50,10 +50,10 @@
     "url": "git+https://github.com/WesterosCraftCode/ElectronLauncher.git"
   },
   "build": {
-    "appId": "westeroscraftlauncher",
-    "productName": "WesterosCraft Launcher",
+    "appId": "akandirrempirelauncher",
+    "productName": "AkandirrEmpire Launcher",
     "artifactName": "${productName}.${ext}",
-    "copyright": "Copyright © 2018 WesterosCraft",
+    "copyright": "Copyright © 2018 AkandirrEmpire",
     "directories": {
       "buildResources": "build",
       "output": "dist"
@@ -72,8 +72,7 @@
       "perMachine": true,
       "allowElevation": true,
       "installerIcon": "build/icon.ico",
-      "uninstallerIcon": "build/icon.ico",
-      "allowToChangeInstallationDirectory": true
+      "uninstallerIcon": "build/icon.ico"
     },
     "mac": {
       "target": "dmg",

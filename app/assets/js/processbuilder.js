@@ -29,7 +29,7 @@ class ProcessBuilder {
         this.usingLiteLoader = false
         this.llPath = null
     }
-    
+
     /**
      * Convienence method to run the functions typically used to build a process.
      */
@@ -88,7 +88,7 @@ class ProcessBuilder {
      * Determine if an optional mod is enabled from its configuration value. If the
      * configuration value is null, the required object will be used to
      * determine if it is enabled.
-     * 
+     *
      * A mod is enabled if:
      *   * The configuration is not null and one of the following:
      *     * The configuration is a boolean and true.
@@ -96,7 +96,7 @@ class ProcessBuilder {
      *   * The configuration is null and one of the following:
      *     * The required object is null.
      *     * The required object's 'def' property is null or true.
-     * 
+     *
      * @param {Object | boolean} modCfg The mod configuration object.
      * @param {Object} required Optional. The required object from the mod's distro declaration.
      * @returns {boolean} True if the mod is enabled, false otherwise.
@@ -135,7 +135,7 @@ class ProcessBuilder {
     /**
      * Resolve an array of all enabled mods. These mods will be constructed into
      * a mod list format and enabled at launch.
-     * 
+     *
      * @param {Object} modCfg The mod configuration object.
      * @param {Array.<Object>} mdls An array of modules to parse.
      * @returns {{fMods: Array.<Object>, lMods: Array.<Object>}} An object which contains
@@ -195,14 +195,14 @@ class ProcessBuilder {
             // We know old forge versions follow this format.
             // Error must be caused by newer version.
         }
-        
+
         // Equal or errored
         return true
     }
 
     /**
      * Construct a mod list json object.
-     * 
+     *
      * @param {'forge' | 'liteloader'} type The mod list type to construct.
      * @param {Array.<Object>} mods An array of mods to add to the mod list.
      * @param {boolean} save Optional. Whether or not we should save the mod list file.
@@ -223,7 +223,7 @@ class ProcessBuilder {
             }
         }
         modList.modRef = ids
-        
+
         if(save){
             const json = JSON.stringify(modList, null, 4)
             fs.writeFileSync(type === 'forge' ? this.fmlDir : this.llDir, json, 'UTF-8')
@@ -234,7 +234,7 @@ class ProcessBuilder {
 
     /**
      * Construct the argument array that will be passed to the JVM process.
-     * 
+     *
      * @param {Array.<Object>} mods An array of enabled mods which will be launched with this process.
      * @param {string} tempNativePath The path to store the native libraries.
      * @returns {Array.<string>} An array containing the full JVM arguments for this process.
@@ -249,7 +249,7 @@ class ProcessBuilder {
             this.forgeData.mainClass]
 
         if(process.platform === 'darwin'){
-            args.unshift('-Xdock:name=WesterosCraft')
+            args.unshift('-Xdock:name=AkandirrEmpire')
             args.unshift('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
 
@@ -262,7 +262,7 @@ class ProcessBuilder {
 
     /**
      * Resolve the arguments required by forge.
-     * 
+     *
      * @returns {Array.<string>} An array containing the arguments required by forge.
      */
     _resolveForgeArgs(){
@@ -348,7 +348,7 @@ class ProcessBuilder {
      * Resolve the full classpath argument list for this process. This method will resolve all Mojang-declared
      * libraries as well as the libraries declared by the server. Since mods are permitted to declare libraries,
      * this method requires all enabled mods as an input
-     * 
+     *
      * @param {Array.<Object>} mods An array of enabled mods which will be launched with this process.
      * @param {string} tempNativePath The path to store the native libraries.
      * @returns {Array.<string>} An array containing the paths of each library required by this process.
@@ -378,9 +378,9 @@ class ProcessBuilder {
     /**
      * Resolve the libraries defined by Mojang's version data. This method will also extract
      * native libraries and point to the correct location for its classpath.
-     * 
+     *
      * TODO - clean up function
-     * 
+     *
      * @param {string} tempNativePath The path to store the native libraries.
      * @returns {Array.<string>} An array containing the paths of each library mojang declares.
      */
@@ -402,17 +402,17 @@ class ProcessBuilder {
                     const extractInst = lib.extract
                     const exclusionArr = extractInst.exclude
                     const artifact = lib.downloads.classifiers[lib.natives[Library.mojangFriendlyOS()].replace('${arch}', process.arch.replace('x', ''))]
-    
+
                     // Location of native zip.
                     const to = path.join(this.libPath, artifact.path)
-    
+
                     let zip = new AdmZip(to)
                     let zipEntries = zip.getEntries()
-    
+
                     // Unzip the native zip.
                     for(let i=0; i<zipEntries.length; i++){
                         const fileName = zipEntries[i].entryName
-    
+
                         let shouldExclude = false
 
                         // Exclude noted files.
@@ -430,7 +430,7 @@ class ProcessBuilder {
                                 }
                             })
                         }
-    
+
                     }
                 }
             }
@@ -443,7 +443,7 @@ class ProcessBuilder {
      * Resolve the libraries declared by this server in order to add them to the classpath.
      * This method will also check each enabled mod for libraries, as mods are permitted to
      * declare libraries.
-     * 
+     *
      * @param {Array.<Object>} mods An array of enabled mods which will be launched with this process.
      * @returns {Array.<string>} An array containing the paths of each library this server requires.
      */
@@ -480,7 +480,7 @@ class ProcessBuilder {
 
     /**
      * Recursively resolve the path of each library required by this module.
-     * 
+     *
      * @param {Object} mdl A module object from the server distro index.
      * @returns {Array.<string>} An array containing the paths of each library this module requires.
      */

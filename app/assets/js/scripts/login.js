@@ -26,7 +26,7 @@ const loggerLogin = LoggerUtil('%c[Login]', 'color: #000668; font-weight: bold')
 
 /**
  * Show a login error.
- * 
+ *
  * @param {HTMLElement} element The element on which to display the error.
  * @param {string} value The error text.
  */
@@ -37,7 +37,7 @@ function showError(element, value){
 
 /**
  * Shake a login error to add emphasis.
- * 
+ *
  * @param {HTMLElement} element The element to shake.
  */
 function shakeError(element){
@@ -50,13 +50,13 @@ function shakeError(element){
 
 /**
  * Validate that an email field is neither empty nor invalid.
- * 
+ *
  * @param {string} value The email value.
  */
 function validateEmail(value){
     if(value){
         if(!basicEmail.test(value) && !validUsername.test(value)){
-            showError(loginEmailError, '* Invalid Value')
+            showError(loginEmailError, '* Valore Invalido')
             loginDisabled(true)
             lu = false
         } else {
@@ -68,14 +68,14 @@ function validateEmail(value){
         }
     } else {
         lu = false
-        showError(loginEmailError, '* Required')
+        showError(loginEmailError, '* RICHIESTO')
         loginDisabled(true)
     }
 }
 
 /**
  * Validate that the password field is not empty.
- * 
+ *
  * @param {string} value The password value.
  */
 function validatePassword(value){
@@ -87,7 +87,7 @@ function validatePassword(value){
         }
     } else {
         lp = false
-        showError(loginPasswordError, '* Required')
+        showError(loginPasswordError, '* RICHIESTO')
         loginDisabled(true)
     }
 }
@@ -112,7 +112,7 @@ loginPassword.addEventListener('input', (e) => {
 
 /**
  * Enable or disable the login button.
- * 
+ *
  * @param {boolean} v True to enable, false to disable.
  */
 function loginDisabled(v){
@@ -123,7 +123,7 @@ function loginDisabled(v){
 
 /**
  * Enable or disable loading elements.
- * 
+ *
  * @param {boolean} v True to enable, false to disable.
  */
 function loginLoading(v){
@@ -138,7 +138,7 @@ function loginLoading(v){
 
 /**
  * Enable or disable login form.
- * 
+ *
  * @param {boolean} v True to enable, false to disable.
  */
 function formDisabled(v){
@@ -157,7 +157,7 @@ function formDisabled(v){
 /**
  * Parses an error and returns a user-friendly title and description
  * for our error overlay.
- * 
+ *
  * @param {Error | {cause: string, error: string, errorMessage: string}} err A Node.js
  * error or Mojang error response.
  */
@@ -166,8 +166,8 @@ function resolveError(err){
     // Node error => err.code | err.message
     if(err.cause != null && err.cause === 'UserMigratedException') {
         return {
-            title: 'Error During Login:<br>Invalid Credentials',
-            desc: 'You\'ve attempted to login with a migrated account. Try again using the account email as the username.'
+            title: 'Errore durante il login:<br>Credenziali Invalide',
+            desc: 'Stai cercando di entrare con un account migrato, prova ad usare l\'username al posto dell\'email.'
         }
     } else {
         if(err.error != null){
@@ -175,12 +175,12 @@ function resolveError(err){
                 if(err.errorMessage != null){
                     if(err.errorMessage === 'Invalid credentials. Invalid username or password.'){
                         return {
-                            title: 'Error During Login:<br>Invalid Credentials',
-                            desc: 'The email or password you\'ve entered is incorrect. Please try again.'
+                            title: 'Errore durante il login:<br>Credenziali Invalide',
+                            desc: 'L\'email o la password da te fornite non sono valide.'
                         }
                     } else if(err.errorMessage === 'Invalid credentials.'){
                         return {
-                            title: 'Error During Login:<br>Too Many Attempts',
+                            title: 'Errore durante il login:<br>Troppi tentativi',
                             desc: 'There have been too many login attempts with this account recently. Please try again later.'
                         }
                     }
@@ -192,14 +192,14 @@ function resolveError(err){
                 if(err.code === 'ENOENT'){
                     // No Internet.
                     return {
-                        title: 'Error During Login:<br>No Internet Connection',
-                        desc: 'You must be connected to the internet in order to login. Please connect and try again.'
+                        title: 'Errore durante il login:<br>Nessuna connessione ad internet',
+                        desc: 'Devi connetterti ad internet per poter usufruire del launcher.'
                     }
                 } else if(err.code === 'ENOTFOUND'){
                     // Could not reach server.
                     return {
-                        title: 'Error During Login:<br>Authentication Server Offline',
-                        desc: 'Mojang\'s authentication server is currently offline or unreachable. Please wait a bit and try again. You can check the status of the server on <a href="https://help.mojang.com/">Mojang\'s help portal</a>.'
+                        title: 'Errore durante il login:<br>Server di Login Offline',
+                        desc: 'I server di login di Mojang sono al momento offline. Per vedere lo status dei server visita il <a href="https://help.mojang.com/">Mojang\'s help portal</a>.'
                     }
                 }
             }
@@ -208,7 +208,7 @@ function resolveError(err){
     if(err.message != null){
         // Unknown error with request.
         return {
-            title: 'Error During Login:<br>Unknown Error',
+            title: 'Errore durante il login:<br>Errore Sconosciuto',
             desc: err.message
         }
     } else {
@@ -257,7 +257,7 @@ loginButton.addEventListener('click', () => {
 
     AuthManager.addAccount(loginUsername.value, loginPassword.value).then((value) => {
         updateSelectedAccount(value)
-        loginButton.innerHTML = loginButton.innerHTML.replace('LOGGING IN', 'SUCCESS')
+        loginButton.innerHTML = loginButton.innerHTML.replace('LOGGING IN', 'LOGIN ESEGUITO')
         $('.circle-loader').toggleClass('load-complete')
         $('.checkmark').toggle()
         setTimeout(() => {
@@ -274,20 +274,20 @@ loginButton.addEventListener('click', () => {
                 $('.circle-loader').toggleClass('load-complete')
                 $('.checkmark').toggle()
                 loginLoading(false)
-                loginButton.innerHTML = loginButton.innerHTML.replace('SUCCESS', 'LOGIN')
+                loginButton.innerHTML = loginButton.innerHTML.replace('SUCCESSO', 'LOGIN')
                 formDisabled(false)
             })
         }, 1000)
     }).catch((err) => {
         loginLoading(false)
         const errF = resolveError(err)
-        setOverlayContent(errF.title, errF.desc, 'Try Again')
+        setOverlayContent(errF.title, errF.desc, 'Riprova')
         setOverlayHandler(() => {
             formDisabled(false)
             toggleOverlay(false)
         })
         toggleOverlay(true)
-        loggerLogin.log('Error while logging in.', err)
+        loggerLogin.log('Errore durante il login.', err)
     })
 
 })
