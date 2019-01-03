@@ -42,11 +42,11 @@ if(!isDev){
     ipcRenderer.on('autoUpdateNotification', (event, arg, info) => {
         switch(arg){
             case 'checking-for-update':
-                loggerAutoUpdater.log('Checking for update..')
-                settingsUpdateButtonStatus('Checking for Updates..', true)
+                loggerAutoUpdater.log('Controllo aggiornamenti...')
+                settingsUpdateButtonStatus('Controllo aggiornamenti...', true)
                 break
             case 'update-available':
-                loggerAutoUpdaterSuccess.log('New update available', info.version)
+                loggerAutoUpdaterSuccess.log('Nuovo aggiornamento disponibile', info.version)
 
                 if(process.platform === 'darwin'){
                     info.darwindownload = `https://github.com/FraWolf/ElectronLauncher/releases/download/v${info.version}/akandirrempirelauncher-${info.version}.dmg`
@@ -66,7 +66,7 @@ if(!isDev){
                 break
             case 'update-not-available':
                 loggerAutoUpdater.log('No new update found.')
-                settingsUpdateButtonStatus('Check for Updates')
+                settingsUpdateButtonStatus('Controlla Aggiornamenti')
                 break
             case 'ready':
                 updateCheckListener = setInterval(() => {
@@ -79,15 +79,15 @@ if(!isDev){
                     if(info.code === 'ERR_UPDATER_INVALID_RELEASE_FEED'){
                         loggerAutoUpdater.log('No suitable releases found.')
                     } else if(info.code === 'ERR_XML_MISSED_ELEMENT'){
-                        loggerAutoUpdater.log('No releases found.')
+                        loggerAutoUpdater.log('Nessun aggiornamento trovato.')
                     } else {
-                        loggerAutoUpdater.error('Error during update check..', info)
-                        loggerAutoUpdater.debug('Error Code:', info.code)
+                        loggerAutoUpdater.error('Errore durante il controllo..', info)
+                        loggerAutoUpdater.debug('Codice Errore:', info.code)
                     }
                 }
                 break
             default:
-                loggerAutoUpdater.log('Unknown argument', arg)
+                loggerAutoUpdater.log('Argomento sconosciuto', arg)
                 break
         }
     })
