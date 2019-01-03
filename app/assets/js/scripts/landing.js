@@ -123,7 +123,7 @@ document.getElementById('avatarOverlay').onclick = (e) => {
 
 // Bind selected account
 function updateSelectedAccount(authUser){
-    let username = 'No Account Selected'
+    let username = 'Nessun Account Selezionato'
     if(authUser != null){
         if(authUser.displayName != null){
             username = authUser.displayName
@@ -143,14 +143,14 @@ function updateSelectedServer(serv){
     }
     ConfigManager.setSelectedServer(serv != null ? serv.getID() : null)
     ConfigManager.save()
-    server_selection_button.innerHTML = '\u2022 ' + (serv != null ? serv.getName() : 'No Server Selected')
+    server_selection_button.innerHTML = '\u2022 ' + (serv != null ? serv.getName() : 'Nessun Server Selezionato')
     if(getCurrentView() === VIEWS.settings){
         animateModsTabRefresh()
     }
     setLaunchEnabled(serv != null)
 }
 // Real text is set in uibinder.js on distributionIndexDone.
-server_selection_button.innerHTML = '\u2022 Loading..'
+server_selection_button.innerHTML = '\u2022 Carimento...'
 server_selection_button.onclick = (e) => {
     e.target.blur()
     toggleServerSelection(true)
@@ -158,7 +158,7 @@ server_selection_button.onclick = (e) => {
 
 // Update Mojang Status Color
 const refreshMojangStatuses = async function(){
-    loggerLanding.log('Refreshing Mojang Statuses..')
+    loggerLanding.log('Caricamento Status Mojang...')
 
     let status = 'grey'
     let tooltipEssentialHTML = ''
@@ -206,7 +206,7 @@ const refreshMojangStatuses = async function(){
         }
 
     } catch (err) {
-        loggerLanding.warn('Unable to refresh Mojang service status.')
+        loggerLanding.warn('Impossibile ricaricare lo stato dei servizi Mojang')
         loggerLanding.debug(err)
     }
 
@@ -231,7 +231,7 @@ const refreshServerStatus = async function(fade = false){
         }
 
     } catch (err) {
-        loggerLanding.warn('Unable to refresh server status, assuming offline.')
+        loggerLanding.warn('Impossibile ricaricare le informazioni del server, penso sia Offline!')
         loggerLanding.debug(err)
     }
     if(fade){
@@ -269,7 +269,7 @@ let extractListener
  */
 function asyncSystemScan(mcVersion, launchAfter = true){
 
-    setLaunchDetails('Please wait..')
+    setLaunchDetails('Perfavore Attendi...')
     toggleLaunchArea(true)
     setLaunchPercentage(0, 100)
 
