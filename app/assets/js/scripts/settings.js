@@ -1164,11 +1164,11 @@ function isPrerelease(version){
 function populateVersionInformation(version, valueElement, titleElement, checkElement){
     valueElement.innerHTML = version
     if(isPrerelease(version)){
-        titleElement.innerHTML = 'Pre Rilascio'
+        titleElement.innerHTML = 'Pre-release'
         titleElement.style.color = '#ff886d'
         checkElement.style.background = '#ff886d'
     } else {
-        titleElement.innerHTML = 'Versione Stabile'
+        titleElement.innerHTML = 'Stable Release'
         titleElement.style.color = null
         checkElement.style.background = null
     }
@@ -1187,7 +1187,7 @@ function populateAboutVersionInformation(){
  */
 function populateReleaseNotes(){
     $.ajax({
-        url: 'https://github.com/WesterosCraftCode/ElectronLauncher/releases.atom',
+        url: 'https://github.com/FraWolf/ElectronLauncher/releases.atom',
         success: (data) => {
             const version = 'v' + remote.app.getVersion()
             const entries = $(data).find('entry')

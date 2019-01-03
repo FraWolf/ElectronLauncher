@@ -49,7 +49,7 @@ if(!isDev){
                 loggerAutoUpdaterSuccess.log('New update available', info.version)
 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `Dopo lo metto`
+                    info.darwindownload = `https://github.com/FraWolf/ElectronLauncher/releases/download/v${info.version}/akandirrempirelauncher-${info.version}.dmg`
                     showUpdateUI(info)
                 }
 

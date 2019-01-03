@@ -3,13 +3,12 @@
   "version": "0.0.1-alpha.1",
   "productName": "AkandirrEmpire Lancher",
   "description": "Modded Minecraft Launcher",
-  "author": "Daniel Scalzi (https://github.com/dscalzi/)",
-  "license": "UNLICENSED",
-  "homepage": "https://github.com/WesterosCraftCode/ElectronLauncher",
-  "bugs": {
-    "url": "https://github.com/WesterosCraftCode/ElectronLauncher/issues"
-  },
+  "author": "Francesco Lombardo (https://frawolf.it) & Daniel Scalzi (https://github.com/dscalzi/)",
   "private": true,
+  "homepage": "https://github.com/FraWolf/ElectronLauncher",
+  "bugs": {
+    "url": "https://github.com/FraWolf/ElectronLauncher/issues"
+  },
   "main": "index.js",
   "scripts": {
     "start": "electron index.js",
@@ -43,11 +42,12 @@
     "cross-env": "^5.2.0",
     "electron": "^4.0.0",
     "electron-builder": "^20.38.4",
+    "electron-packager": "^13.0.1",
     "eslint": "^5.11.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WesterosCraftCode/ElectronLauncher.git"
+    "url": "git+https://github.com/FraWolf/ElectronLauncher.git"
   },
   "build": {
     "appId": "akandirrempirelauncher",
@@ -81,10 +81,10 @@
     },
     "linux": {
       "target": "AppImage",
-      "maintainer": "Daniel Scalzi",
-      "vendor": "WesterosCraft",
-      "synopsis": "Custom Launcher for WesterosCraft",
-      "description": "Custom launcher which allows users to join WesterosCraft. All mods, configurations, and updates are handled automatically.",
+      "maintainer": "Francesco Lombardo",
+      "vendor": "AkandirrEmpire",
+      "synopsis": "Custom Launcher for AkandirrEmpire",
+      "description": "Custom launcher which allows users to join AkandirrEmpire. All mods, configurations, and updates are handled automatically.",
       "category": "Game"
     },
     "deb": {
