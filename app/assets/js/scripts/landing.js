@@ -284,6 +284,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
         ConfigManager.getCommonDirectory(),
         ConfigManager.getJavaExecutable()
     ], {
+        env: forkEnv,
         stdio: 'pipe'
     })
     // Stdout
@@ -482,6 +483,7 @@ function dlAsync(login = true){
         ConfigManager.getCommonDirectory(),
         ConfigManager.getJavaExecutable()
     ], {
+        env: forkEnv,
         stdio: 'pipe'
     })
     // Stdout
