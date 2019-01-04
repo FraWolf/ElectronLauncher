@@ -1,6 +1,6 @@
 {
   "name": "akandirrempirelauncher",
-  "version": "0.0.1-alpha.3",
+  "version": "0.0.1-alpha.4",
   "productName": "AkandirrEmpire Lancher",
   "description": "Modded Minecraft Launcher",
   "author": "Francesco Lombardo (https://frawolf.it) & Daniel Scalzi (https://github.com/dscalzi/)",
@@ -72,7 +72,8 @@
       "perMachine": true,
       "allowElevation": true,
       "installerIcon": "build/icon.ico",
-      "uninstallerIcon": "build/icon.ico"
+      "uninstallerIcon": "build/icon.ico",
+      "allowToChangeInstallationDirectory": true
     },
     "mac": {
       "target": "dmg",
