@@ -2,7 +2,7 @@
     <div id="settingsContainerLeft">
         <div id="settingsNavContainer">
             <div id="settingsNavHeader">
-                <span id="settingsNavHeaderText">Settings</span>
+                <span id="settingsNavHeaderText">Impostazioni</span>
             </div>
             <div id="settingsNavItemsContainer">
                 <div id="settingsNavItemsContent">
@@ -12,11 +12,11 @@
                     <button class="settingsNavItem" rSc="settingsTabJava">Java</button>
                     <button class="settingsNavItem" rSc="settingsTabLauncher">Launcher</button>
                     <div class="settingsNavSpacer"></div>
-                    <button class="settingsNavItem" rSc="settingsTabAbout">About</button>
-                    <button class="settingsNavItem" rSc="settingsTabUpdate" id="settingsNavUpdate">Updates</button>
+                    <button class="settingsNavItem" rSc="settingsTabAbout">Info</button>
+                    <button class="settingsNavItem" rSc="settingsTabUpdate" id="settingsNavUpdate">Aggiornamenti</button>
                     <div id="settingsNavContentBottom">
                         <div class="settingsNavDivider"></div>
-                        <button id="settingsNavDone">Done</button>
+                        <button id="settingsNavDone">Fatto</button>
                     </div>
                 </div>
             </div>
@@ -25,16 +25,16 @@
     <div id="settingsContainerRight">
         <div id="settingsTabAccount" class="settingsTab">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">Account Settings</span>
-                <span class="settingsTabHeaderDesc">Add new accounts or manage existing ones.</span>
+                <span class="settingsTabHeaderText">Impostazione Account</span>
+                <span class="settingsTabHeaderDesc">Aggiungi nuovi account o modifica quelli già presenti.</span>
             </div>
             <div id="settingsAddAccountContainer">
                 <button id="settingsAddAccount">
-                    <span id="settingsAddAccountText">&#43; Add Account</span>
+                    <span id="settingsAddAccountText">&#43; Aggiungi account</span>
                 </button>
             </div>
             <div id="settingsCurrentAccountsHeader">
-                <span class="settingsFieldTitle">Current Accounts</span>
+                <span class="settingsFieldTitle">Account Attuali</span>
             </div>
             <div id="settingsCurrentAccounts">
                 <!-- Auth accounts populated here. -->
@@ -42,11 +42,11 @@
         </div>
         <div id="settingsTabMinecraft" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">Minecraft Settings</span>
-                <span class="settingsTabHeaderDesc">Options related to game launch.</span>
+                <span class="settingsTabHeaderText">Impostazioni Minecraft</span>
+                <span class="settingsTabHeaderDesc">Opzioni relativo all'avvio del gioco.</span>
             </div>
             <div id="settingsGameResolutionContainer">
-                <span class="settingsFieldTitle">Game Resolution</span>
+                <span class="settingsFieldTitle">Risoluzione Gioco</span>
                 <div id="settingsGameResolutionContent">
                     <input type="number" id="settingsGameWidth" min="0" cValue="GameWidth">
                     <div id="settingsGameResolutionCross">&#10006;</div>
@@ -55,7 +55,7 @@
             </div>
             <div class="settingsFieldContainer">
                 <div class="settingsFieldLeft">
-                    <span class="settingsFieldTitle">Launch in fullscreen.</span>
+                    <span class="settingsFieldTitle">Avvia a schermo intero.</span>
                 </div>
                 <div class="settingsFieldRight">
                     <label class="toggleSwitch">
@@ -66,7 +66,7 @@
             </div>
             <div class="settingsFieldContainer">
                 <div class="settingsFieldLeft">
-                    <span class="settingsFieldTitle">Automatically connect to the server on launch.</span>
+                    <span class="settingsFieldTitle">Connettiti automaticamente al server all'avvio del gioco.</span>
                 </div>
                 <div class="settingsFieldRight">
                     <label class="toggleSwitch">
@@ -77,8 +77,8 @@
             </div>
             <div class="settingsFieldContainer">
                 <div class="settingsFieldLeft">
-                    <span class="settingsFieldTitle">Launch game process detached from launcher.</span>
-                    <span class="settingsFieldDesc">If the game is not detached, closing the launcher will also close the game.</span>
+                    <span class="settingsFieldTitle">Processo del gioco distaccato da quello del launcher.</span>
+                    <span class="settingsFieldDesc">Se il gioco non è distaccato dal launcher, alla chiusura di esso verrà chiuso pure il gioco.</span>
                 </div>
                 <div class="settingsFieldRight">
                     <label class="toggleSwitch">
@@ -90,8 +90,8 @@
         </div>
         <div id="settingsTabMods" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">Mod Settings</span>
-                <span class="settingsTabHeaderDesc">Enable or disable mods.</span>
+                <span class="settingsTabHeaderText">Impostazioni Mod</span>
+                <span class="settingsTabHeaderDesc">Abilita o disablita mod.</span>
             </div>
             <div id="settingsSelServContainer">
                 <div id="settingsSelServContent">
@@ -99,37 +99,37 @@
                 </div>
                 <div id="settingsSwitchServerContainer">
                     <div id="settingsSwitchServerContent">
-                        <button id="settingsSwitchServerButton">Switch</button>
+                        <button id="settingsSwitchServerButton">Cambia</button>
                     </div>
                 </div>
             </div>
             <div id="settingsModsContainer">
                 <div id="settingsReqModsContainer">
-                    <div class="settingsModsHeader">Required Mods</div>
+                    <div class="settingsModsHeader">Mod Richieste</div>
                     <div id="settingsReqModsContent">
 
                     </div>
                 </div>
                 <div id="settingsOptModsContainer">
-                    <div class="settingsModsHeader">Optional Mods</div>
+                    <div class="settingsModsHeader">Mod Opzionali</div>
                     <div id="settingsOptModsContent">
 
                     </div>
                 </div>
                 <div id="settingsDropinModsContainer">
-                    <div class="settingsModsHeader">Drop-in Mods</div>
-                    <button id="settingsDropinFileSystemButton">+ Add Mods <span id="settingsDropinRefreshNote">(F5 to Refresh)</span></button>
+                    <div class="settingsModsHeader">Drop-in Mod</div>
+                    <button id="settingsDropinFileSystemButton">+ Aggiungi Mod <span id="settingsDropinRefreshNote">(F5 per Ricaricare)</span></button>
                     <div id="settingsDropinModsContent">
 
                     </div>
                 </div>
                 <div id="settingsShadersContainer">
                     <div class="settingsModsHeader">Shaderpacks</div>
-                    <div id="settingsShaderpackDesc">Enable or disable shaders. Please note, shaders will only run smoothly on powerful setups. You may add custom packs here.</div>
+                    <div id="settingsShaderpackDesc">Attiva o disattiva le shader. Importante, le shader sono soltanto per pc potenti. Puoi aggiungere pacchetti personalizazti qui.</div>
                     <div id="settingsShaderpackWrapper">
                         <button id="settingsShaderpackButton"> + </button>
                         <div class="settingsSelectContainer">
-                            <div class="settingsSelectSelected" id="settingsShadersSelected">Select Shaderpack</div>
+                            <div class="settingsSelectSelected" id="settingsShadersSelected">Seleziona Shaderpack</div>
                             <div class="settingsSelectOptions" id="settingsShadersOptions" hidden>
 
                             </div>
@@ -140,15 +140,15 @@
         </div>
         <div id="settingsTabJava" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">Java Settings</span>
-                <span class="settingsTabHeaderDesc">Manage the Java configuration (advanced).</span>
+                <span class="settingsTabHeaderText">Impostazioni Java</span>
+                <span class="settingsTabHeaderDesc">Modifica la impostazioni di Java (Avanzato).</span>
             </div>
             <div id="settingsMemoryContainer">
-                <div id="settingsMemoryTitle">Memory</div>
+                <div id="settingsMemoryTitle">Memoria</div>
                 <div id="settingsMemoryContent">
                     <div id="settingsMemoryContentLeft">
                         <div class="settingsMemoryContentItem">
-                            <span class="settingsMemoryHeader">Maximum RAM</span>
+                            <span class="settingsMemoryHeader">RAM Massima</span>
                             <div class="settingsMemoryActionContainer">
                                 <div id="settingsMaxRAMRange" class="rangeSlider" cValue="MaxRAM" min="3" max="8" value="3" step="0.5">
                                     <div class="rangeSliderBar"></div>
@@ -158,7 +158,7 @@
                             </div>
                         </div>
                         <div class="settingsMemoryContentItem">
-                            <span class="settingsMemoryHeader">Minimum RAM</span>
+                            <span class="settingsMemoryHeader">RAM Minima</span>
                             <div class="settingsMemoryActionContainer">
                                 <div id="settingsMinRAMRange" class="rangeSlider" cValue="MinRAM" min="3" max="8" value="3" step="0.5">
                                     <div class="rangeSliderBar"></div>
@@ -167,16 +167,16 @@
                                 <span id="settingsMinRAMLabel" class="settingsMemoryLabel">3G</span>
                             </div>
                         </div>
-                        <div id="settingsMemoryDesc">The recommended minimum RAM is 3 gigabytes. Setting the minimum and maximum values to the same value may reduce lag.</div>
+                        <div id="settingsMemoryDesc">La RAM raccomandato è 3 GB. Impostare entrambi i valori uguali ridurrà il lagg.</div>
                     </div>
                     <div id="settingsMemoryContentRight">
                         <div id="settingsMemoryStatus">
                             <div class="settingsMemoryStatusContainer">
-                                <span class="settingsMemoryStatusTitle">Total</span>
+                                <span class="settingsMemoryStatusTitle">Totale</span>
                                 <span id="settingsMemoryTotal" class="settingsMemoryStatusValue">16G</span>
                             </div>
                             <div class="settingsMemoryStatusContainer">
-                                <span class="settingsMemoryStatusTitle">Available</span>
+                                <span class="settingsMemoryStatusTitle">Disponibile</span>
                                 <span id="settingsMemoryAvail" class="settingsMemoryStatusValue">7.3G</span>
                             </div>
                         </div>
@@ -184,9 +184,9 @@
                 </div>
             </div>
             <div class="settingsFileSelContainer">
-                <div class="settingsFileSelTitle">Java Executable</div>
+                <div class="settingsFileSelTitle">Java Eseguibile</div>
                 <div class="settingsFileSelContent">
-                    <div id="settingsJavaExecDetails">Selected: Java 8 Update 172 (x64)</div>
+                    <div id="settingsJavaExecDetails">Selezionato: Java 8 Update 172 (x64)</div>
                     <div class="settingsFileSelActions">
                         <div class="settingsFileSelIcon">
                              <svg class="settingsFileSelSVG" x="0px" y="0px" viewBox="0 0 305.001 305.001">
@@ -207,10 +207,10 @@
                         <label class="settingsFileSelLabel" for="settingsJavaExecSel">Choose File</label>
                     </div>
                 </div>
-                 <div class="settingsFileSelDesc">The Java executable is validated before game launch. <strong>Requires Java 8 x64.</strong><br>The path should end with <strong>bin<%= process.platform === 'win32' ? '\\javaw.exe' : '/java' %></strong>.</div>
+                 <div class="settingsFileSelDesc">L'eseguibile Java è convalidato primo dell'avvio del launcher <strong>Richiesto Java 8 x64.</strong><br>La posizione dovrebbe finire in <strong>bin<%= process.platform === 'win32' ? '\\javaw.exe' : '/java' %></strong>.</div>
             </div>
             <div id="settingsJVMOptsContainer">
-                <div id="settingsJVMOptsTitle">Additional JVM Options</div>
+                <div id="settingsJVMOptsTitle">Opzioni JVM Addizionali</div>
                 <div id="settingsJVMOptsContent">
                     <div class="settingsFileSelIcon">
                      <svg class="settingsFileSelSVG" x="0px" y="0px" viewBox="0 0 305.001 305.001">
@@ -228,18 +228,18 @@
                     </div>
                     <input id="settingsJVMOptsVal" cValue="JVMOptions" type="text">
                 </div>
-                <div id="settingsJVMOptsDesc">Options to be provided to the JVM at runtime. <em>-Xms</em> and <em>-Xmx</em> should not be included.<br><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/<%= process.platform === 'win32' ? 'windows' : 'unix' %>/java.html">Available Options for Java 8</a>.</div>
+                <div id="settingsJVMOptsDesc">Opzioni date a JVM all'avvio <em>-Xms</em> and <em>-Xmx</em> potrebbero non essere inclusi.<br><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/<%= process.platform === 'win32' ? 'windows' : 'unix' %>/java.html">Opzioni disponibili per Java 8</a>.</div>
             </div>
         </div>
         <div id="settingsTabLauncher" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">Launcher Settings</span>
-                <span class="settingsTabHeaderDesc">Options related to the launcher itself.</span>
+                <span class="settingsTabHeaderText">Impostazioni Launcher</span>
+                <span class="settingsTabHeaderDesc">Opzioni relative al launcher stesso.</span>
             </div>
             <div class="settingsFieldContainer">
                 <div class="settingsFieldLeft">
-                    <span class="settingsFieldTitle">Allow Pre-Release Updates.</span>
-                    <span class="settingsFieldDesc">Pre-Releases include new features which may have not been fully tested or integrated.<br>This will always be true if you are using a pre-release version.</span>
+                    <span class="settingsFieldTitle">Abilita aggiornamenti Pre-rilascio.</span>
+                    <span class="settingsFieldDesc">Le versioni Pre-rilascio includono nuove funzioni che potrebbero ancora non funzionare correttamente.<br>Questo sarà automaticamente vero nel caso in cui stessi usando una versione Pre-rilascio</span>
                 </div>
                 <div class="settingsFieldRight">
                     <label class="toggleSwitch">
@@ -250,7 +250,7 @@
             </div>
             <div class="settingsFileSelContainer">
                 <div class="settingsFileSelContent">
-                    <div class="settingsTabHeaderText" id="settingsDataDirTitle">Data Directory</div>
+                    <div class="settingsTabHeaderText" id="settingsDataDirTitle">Cartella Dati</div>
                     <div class="settingsFileSelActions">
                         <div class="settingsFileSelIcon">
                             <svg class="settingsFileSelSVG">
@@ -263,16 +263,16 @@
                         </div>
                         <input class="settingsFileSelVal" type="text" value="null" cValue="DataDirectory" disabled>
                         <input class="settingsFileSelSel" id="settingsDataDirSel" type="file" webkitdirectory>
-                        <label class="settingsFileSelLabel" for="settingsDataDirSel">Choose Folder</label>
+                        <label class="settingsFileSelLabel" for="settingsDataDirSel">Scegli Cartella</label>
                     </div>
                 </div>
-                <div class="settingsFileSelDesc">All game files and local Java installations will be stored in the data directory.<br>Screenshots and world saves are stored in the instance folder for the corresponding server configuration.</div>
+                <div class="settingsFileSelDesc">Tutti i file del gioco e di Java saranno presenti in questa cartella.<br>Screenshot e mondi saranno salvati nella cartella specifica del server in uso.</div>
             </div>
         </div>
         <div id="settingsTabAbout" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
                 <span class="settingsTabHeaderText">Info</span>
-                <span class="settingsTabHeaderDesc">Mostra informazioni sulla versione del launcher e sulle note di rilascio</span>
+                <span class="settingsTabHeaderDesc">Mostra informazioni sulla versione del launcher e sulle note di rilascio.</span>
             </div>
             <div id="settingsAboutCurrentContainer">
                 <div id="settingsAboutCurrentContent">
@@ -292,7 +292,7 @@
                     </div>
                 </div>
                 <div id="settingsAboutButtons">
-                    <a href="http://discord.akandirrempire.it" id="settingsAboutSupportButton" class="settingsAboutButton">Support</a>
+                    <a href="http://discord.akandirrempire.it" id="settingsAboutSupportButton" class="settingsAboutButton">Supporto</a>
                 </div>
             </div>
             <div class="settingsChangelogContainer">
@@ -313,7 +313,7 @@
         <div id="settingsTabUpdate" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
                 <span class="settingsTabHeaderText">Aggiornamenti Launcher</span>
-                <span class="settingsTabHeaderDesc">Scarica, installa, e mostra gli aggiornamenti del launcher</span>
+                <span class="settingsTabHeaderDesc">Scarica, installa, e mostra gli aggiornamenti del launcher.</span>
             </div>
             <div id="settingsUpdateStatusContainer">
                 <div id="settingsUpdateStatusContent">
