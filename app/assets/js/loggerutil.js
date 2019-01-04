@@ -5,9 +5,9 @@ class LoggerUtil {
         this.style = style
     }
 
-    log(){
+    /*log(){
         console.log.apply(null, [this.prefix, this.style, ...arguments])
-    }
+    }*/
 
     info(){
         console.info.apply(null, [this.prefix, this.style, ...arguments])

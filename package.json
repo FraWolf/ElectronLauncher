@@ -1,6 +1,6 @@
 {
   "name": "akandirrempirelauncher",
-  "version": "0.0.1-alpha.4",
+  "version": "0.0.1-alpha.5",
   "productName": "AkandirrEmpire Lancher",
   "description": "Modded Minecraft Launcher",
   "author": "Francesco Lombardo (https://frawolf.it) & Daniel Scalzi (https://github.com/dscalzi/)",
@@ -11,7 +11,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "electron index.js",
+    "start": "electron .",
     "cilinux": "electron-builder --linux --win",
     "cidarwin": "electron-builder --mac",
     "dist": "cross-env ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES=true electron-builder",
