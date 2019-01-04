@@ -1,6 +1,6 @@
-const fs    = require('fs-extra')
-const os    = require('os')
-const path  = require('path')
+const fs   = require('fs-extra')
+const os   = require('os')
+const path = require('path')
 
 const logger = require('./loggerutil')('%c[ConfigManager]', 'color: #a02d2a; font-weight: bold')
 
@@ -89,8 +89,8 @@ const DEFAULT_CONFIG = {
             launchDetached: true
         },
         launcher: {
-          allowPrerelease: false,
-          dataDirectory: dataPath
+            allowPrerelease: false,
+            dataDirectory: dataPath
         }
     },
     newsCache: {
@@ -113,7 +113,7 @@ let config = null
  * Save the current configuration to a file.
  */
 exports.save = function(){
-  fs.writeFileSync(configPath, JSON.stringify(config, null, 4), 'UTF-8')
+    fs.writeFileSync(configPath, JSON.stringify(config, null, 4), 'UTF-8')
 }
 
 /**
@@ -123,19 +123,20 @@ exports.save = function(){
  * need to be externally assigned.
  */
 exports.load = function(){
-   let doLoad = true
-   if(!fs.existsSync(configPath)){
-         // Create all parent directories.
-         fs.ensureDirSync(path.join(configPath, '..'))
+    let doLoad = true
+
+    if(!fs.existsSync(configPath)){
+        // Create all parent directories.
+        fs.ensureDirSync(path.join(configPath, '..'))
         if(fs.existsSync(configPathLEGACY)){
-             fs.moveSync(configPathLEGACY, configPath)
-         } else {
-             doLoad = false
-             config = DEFAULT_CONFIG
-             exports.save()
+            fs.moveSync(configPathLEGACY, configPath)
+        } else {
+            doLoad = false
+            config = DEFAULT_CONFIG
+            exports.save()
         }
-     }
-     if(doLoad){
+    }
+    if(doLoad){
         let doValidate = false
         try {
             config = JSON.parse(fs.readFileSync(configPath, 'UTF-8'))
@@ -204,7 +205,7 @@ exports.isFirstLaunch = function(){
  * @returns {string} The name of the folder.
  */
 exports.getTempNativeFolder = function(){
-    return 'WCNatives'
+    return 'AECNatives'
 }
 
 // System Settings (Unconfigurable on UI)
@@ -244,7 +245,7 @@ exports.setNewsCacheDismissed = function(dismissed){
  * @returns {string} The launcher's common directory.
  */
 exports.getCommonDirectory = function(){
-   return path.join(exports.getDataDirectory(), 'common')
+    return path.join(exports.getDataDirectory(), 'common')
 }
 
 /**
